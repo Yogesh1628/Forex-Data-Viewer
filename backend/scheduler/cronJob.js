@@ -5,7 +5,6 @@ const currencyPairs = [
     'USDJPY', 'INRUSD',
     'USDINR', 'INREUR',
     'EURINR', 'GBPUSD',
-    'AUDUSD', 'USDCAD',
     'USDCHF', 'NZDUSD',
     'EURJPY', 'GBPJPY',
     'EURGBP', 'EURUSD'
@@ -39,7 +38,7 @@ function calculateStartAndEndDate(period) {
 // running after every 2 minutes and add the latest data of Period Selected - till this date in DB 
 export function cronScheduler() {
 
-    console.log("Scheduler run after every 2 mins");
+    console.log("Scheduler run after every 2 mins and add latest data of complete last week");
     cron.schedule('*/2 * * * *', async () => {
         console.log('Scheduler running...');
         
