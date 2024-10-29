@@ -40,24 +40,15 @@ The backend API allows users to query historical forex data. The scheduler runs 
 - USDINR
 - INREUR
 - EURINR
-- GBPUSD
-- AUDUSD
-- USDCAD
-- USDCHF
-- NZDUSD
-- EURJPY
-- GBPJPY
-- EURGBP
-- EURUSD
-
-You can modify the scheduler time according to your needs, but ensure that the backend server is running continuously.
+  
+You can modify the scheduler time according to your needs and we can add more Pairs if we want , but ensure that the backend server is running continuously.
 
 
 ## Database
 This application uses PostgreSQL to store historical forex data. Make sure you have PostgreSQL installed and a database created before running the application.
 
 ## Scheduler
-The application uses a cron job to run a scheduler that fetches data from Yahoo Finance. The scheduler is set to run every 10 minutes by default. You can modify the scheduling interval in the `cronScheduler` function within the backend code.
+The application uses a cron job to run a scheduler that fetches data from Yahoo Finance. The scheduler is set to run every 10 minutes by default and we can select the time period for date range. You can modify the scheduling interval in the `cronScheduler` function within the backend code.
 
 ## Environment Variables
 This project requires a `.env` file in the root directory for necessary environment variables. Create a `.env` file and add the following variables: `DB_CONNECTION_STRING=your_postgresql_connection_string`. Make sure to replace `your_postgresql_connection_string` with your actual database connection string.
@@ -69,13 +60,15 @@ This project requires a `.env` file in the root directory for necessary environm
 3. Install the required dependencies for the backend: `npm install`.
 4. Set up your PostgreSQL database and update the `.env` file with the connection string.
 5. Start the backend server: `npm start / node app.js`.
-6. Navigate to the frontend directory and install the required dependencies: `cd frontend` and `npm install`.
+6. Navigate to the frontend directory and install the required dependencies: `root_folder in our case` and `npm install`.
 7. Start the frontend application: `npm start / npm run dev`.
 8. Open your browser and navigate to `http://localhost:5173` to view the Forex Data Viewer.
 
 ### Table Schema
 
-The following SQL code defines the `forex_data` table schema used to store historical forex data:
+The Database name is also `forex_data`
+---
+The following SQL code defines the `forex_data` table schema used to store historical forex data :
 
 ```sql
 CREATE TABLE forex_data (
