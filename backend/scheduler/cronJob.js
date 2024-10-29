@@ -34,6 +34,7 @@ function calculateStartAndEndDate(period) {
 
     const startDate = Math.floor((new Date().getTime() - daysToSubtract * 24 * 60 * 60 * 1000) / 1000); 
 
+    // both in UNIX time format for yahoo finance website url
     return { startDate, endDate };
 }
 
