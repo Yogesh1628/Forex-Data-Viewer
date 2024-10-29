@@ -2,12 +2,15 @@ import cron from 'node-cron';
 import { scrapData } from '../getData/scrapData.js';
 
 const currencyPairs = [
+
     'USDJPY', 'INRUSD',
     'USDINR', 'INREUR',
     'EURINR', 'GBPUSD',
     'USDCHF', 'NZDUSD',
     'EURJPY', 'GBPJPY',
-    'EURGBP', 'EURUSD'
+    'EURGBP', 'EURUSD',
+    'GBPINR', 'AEDINR'
+    
 ];
 
 const periodDaysMap = {
