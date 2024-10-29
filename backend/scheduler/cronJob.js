@@ -38,15 +38,15 @@ function calculateStartAndEndDate(period) {
 }
 
 
-// running after every 2 minutes and add the latest data of Period Selected - till this date in DB 
+// running after every 1 minutes and add the latest data of Period Selected - till this date in DB 
 export function cronScheduler() {
 
-    console.log("Scheduler run after every 2 mins and add latest data of complete last week");
-    cron.schedule('*/2 * * * *', async () => {
+    console.log( "Scheduler run after every 1 mins and period is 2M ( for testing )" );
+
+    cron.schedule('*/1 * * * *', async () => {
         console.log('Scheduler running...');
         
-        //
-        const period = '1W'; // Change this to the desired period, e.g., '1M', '3M', etc.
+        const period = '2M'; // Change this to the desired period, e.g., '1M', '3M', etc.
 
         const dateRange = calculateStartAndEndDate(period);
         
